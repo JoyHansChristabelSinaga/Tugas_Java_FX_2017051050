@@ -4,4 +4,4 @@ Nama  : Joy Hans Christabel Sinaga
 Kelas : C
 NPM   : 2017051050
 
-Kodingan ada di file Main Control
+Kodingan ada di file MainControl
