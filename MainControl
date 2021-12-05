@@ -92,10 +92,8 @@ public class TugasJavaFX extends Application {
 
         primaryStage.setTitle("Registrasi");
         primaryStage.setScene(scene);
-        primaryStage.show();
-        
+        primaryStage.show();  
     }
-    
 
     public static void main(String[] args) {
         launch(args);
