@@ -1,3 +1,104 @@
 //Joy Hans Christabel Sinaga
 //2017051050
 //C
+
+import javafx.application.Application;
+import javafx.event.EventHandler;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.TilePane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+
+public class TugasJavaFX extends Application {
+    
+    @Override
+    public void start(Stage primaryStage) {
+        Button BTN = new Button();
+        BTN.setText("Register");
+        BTN.setOnAction(new EventHandler<javafx.event.ActionEvent>() {
+            
+            @Override
+            public void handle(javafx.event.ActionEvent event) {
+                System.out.println("Registered!");
+             }
+        });
+        
+        TextField FNama = new TextField();
+        TextField BNama = new TextField();
+        TextField Email = new TextField();
+        TextField Contact = new TextField();
+        TextField Password1 = new TextField();
+        TextField Password2 = new TextField();
+
+        Label LFNama = new Label("First Name ");
+        Label LBNama = new Label("Last Name ");
+        Label LEmail = new Label("E-Mail Address ");
+        Label LContact = new Label("Contact No ");
+        Label LPassword1 = new Label("Password ");
+        Label LPassword2 = new Label("Confirm Password ");
+
+        HBox HBFNama = new HBox();
+        HBox HBBNama = new HBox();
+        HBox HBEmail = new HBox();
+        HBox HBContact = new HBox();
+        HBox HBPassword1 = new HBox();
+        HBox HBPassword2 = new HBox();
+
+        VBox FieldHolder = new VBox();
+
+        HBFNama.getChildren().addAll(LFNama,FNama);
+        HBFNama.setSpacing(50);
+
+        HBBNama.getChildren().addAll(LBNama, BNama);
+        HBBNama.setSpacing(51);
+
+        HBEmail.getChildren().addAll(LEmail, Email);
+        HBEmail.setSpacing(29);
+
+        HBContact.getChildren().addAll(LContact, Contact);
+        HBContact.setSpacing(49);
+
+        HBPassword1.getChildren().addAll(LPassword1, Password1);
+        HBPassword1.setSpacing(59);
+
+        HBPassword2.getChildren().addAll(LPassword2, Password2);
+        HBPassword2.setSpacing(14);
+
+        FieldHolder.getChildren().addAll(HBFNama, HBBNama, HBEmail, HBContact, HBPassword1, HBPassword2);
+        FieldHolder.setSpacing(10);
+
+        FieldHolder.setLayoutX(30);
+        FieldHolder.setLayoutY(30);
+
+        Group Group = new Group();
+        TilePane tp_Panel2 = new TilePane();
+
+        tp_Panel2.getChildren().addAll(BTN);
+        BTN.setStyle("-fx-background-color: #ffffff; ");
+
+        tp_Panel2.setLayoutX(150);
+        tp_Panel2.setLayoutY(250);
+
+        Group.getChildren().addAll(FieldHolder, tp_Panel2); 
+
+        Scene scene = new Scene(Group, 350, 300);
+        scene.setFill(Color.GREY);
+
+        primaryStage.setTitle("Registrasi");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+        
+    }
+    
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+    
+}
